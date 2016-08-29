@@ -30,45 +30,53 @@ author_out = File.open(row[3] + "_" + row[1] + ".txt", "wb")
 url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=" + name + "&format=xerxes&max=100"
 
 ## @page = Nokogiri::XML(open("http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Collier%2C+Aaron&format=xerxes&max=100"))
-@page = Nokogiri::XML(open(url))
-author_out << @page
 
+
+###############
+### TEST QUERY
+## http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Lindholm,James&format=xerxes&max=100
+###############
+
+@page = Nokogiri::XML.Reader(open(url))
+
+## author_out << @page
 ## @xml_data = Nokogiri::XML.Reader(open("http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Collier%2C+Aaron&format=xerxes&max=100"))
-
-records = @page.xpath("//results//records[record[node()]]")
-
+## records = @page.xpath("//results//records[record[node()]]")
 ## puts records
 
 
-records.children.each do |node|
+@page.each do |node|
 	headers = Array.new()
 	content = Array.new()
 	
-	## puts " -------------------------------- "
-	## puts node.children.size
-	node.elements.each do |element|
-				
-		if element.name == "xerxes_record"
-			##  puts "XERXES_RECORD"
-			element.elements.each do |sub_element|
-				## puts sub_element.name + " -- " + sub_element.inner_html
-				if sub_element.name == "authors"
-					sub_element.elements.each do |author|
-						puts " -- " + author
-					end
-				else
-
-					if @attributes.has_key? sub_element.name 
-						headers << sub_element.name if first_pass
-						content << sub_element.inner_html
-					end					
-				end
-			end
-		end 
+	if node.name == 'authors'
+		puts "in authors node"
 	end
+	
+##	if node.name == 'results'
+##	node.elements.each do |element|
+##				
+##		if element.name == "xerxes_record"
+##			##  puts "XERXES_RECORD"
+##			element.elements.each do |sub_element|
+##				## puts sub_element.name + " -- " + sub_element.inner_html
+##				if sub_element.name == "authors"
+##					sub_element.elements.each do |author|
+##						puts " -- " + author
+##					end
+##				else
+##
+##					if @attributes.has_key? sub_element.name 
+##						headers << sub_element.name if first_pass
+##						content << sub_element.inner_html
+##					end					
+##				end
+##			end
+##		end 
+##	end
 
-	csv_out << headers if first_pass
-	csv_out << content
+##	csv_out << headers if first_pass
+##	csv_out << content
 		
 	first_pass = FALSE
 	## puts " -------------------------------- "
@@ -76,50 +84,3 @@ records.children.each do |node|
 end
 
 end ## end of loop through CSV
-
-## records.each do |node|
-## 	puts node
-## end
-
-##@xml_data.each do |node|
-## 	puts node.name
-##	puts node.keys
-##	put node.values
-####	if node.name == "records"
-####		node.children.each do |record_node|
-####			puts record_node.name
-####		end
-####	end
-##end
-
-## records_node = @xml_data.at("//results//records")
-## puts records_node.children.count
-
-# @page.xpath("//results//records//record").each do |record|
-
-
-
-##
-##for record in records
-##	# puts record
-##	@xrecord = Nokogiri::XML(record.to_s)
-##	# puts @xrecord
-###
-### journal = @xrecord.xpath("//xerxes_record//journal_title")
-###
-###puts journal.name + " => " + journal.text
-##
-##	journal = @xrecord.xpath("//xerxes_record//journal_title")
-##	authors = @xrecord.xpath("//xerxes_record//authors")
-##	numbers = @xrecord.xpath("//xerxes_record//standard_numbers")
-##	title = @xrecord.xpath("//xerxes_record//title")
-##	year = @xrecord.xpath("//xerxes_record//year")
-##	abstract = @xrecord.xpath("//xerxes_record//abstract")
-##	subjects = @xrecord.xpath("//xerxes_record//subjects")
-##	
-##	puts title.text + "," + year.text + "," + journal.text + "," + abstract.text
-##	# if journal
-##	# puts journal.text
-##	# end
-##end
-##

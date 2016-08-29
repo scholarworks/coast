@@ -51,6 +51,17 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	
 	if node.name == 'authors'
 		puts "in authors node"
+		au_first = "";
+		au_last = "";
+		node.each do |auth_node|
+			if auth_node.name = "aufirst"
+				au_first = auth_node.inner_xml
+			end
+			if auth_node.name = "aulast">
+				au_last = auth_node.inner_xml
+			end
+		end
+		puts au_last + ", " + au_first
 	end
 	
 ##	if node.name == 'results'

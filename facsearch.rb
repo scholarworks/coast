@@ -22,10 +22,10 @@ first_pass = TRUE
 CSV.foreach("coast.csv", :headers=>false) do |row|
 puts row[1]
 
-name = row[2]
+name = row[1]
 name = row[3] + "," + name unless row[3] == nil
 
-author_out = File.open(row[3] + "_" + row[2] + ".txt", "wb")
+author_out = File.open(row[3] + "_" + row[1] + ".txt", "wb")
 
 url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=" + name + "&format=xerxes&max=100"
 

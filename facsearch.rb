@@ -19,7 +19,7 @@ csv_out = CSV.open("/tmp/export.csv", "wb")   # open the output file
 ## loop over the input file.
 first_pass = TRUE
 
-CSV.foreach("coast.csv", :headers=>true) do |row|
+CSV.foreach("coast.csv", :headers=>false) do |row|
 puts row[1]
 
 name = row[2]

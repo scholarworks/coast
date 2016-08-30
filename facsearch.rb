@@ -44,9 +44,10 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	puts node.class
 	
 	hash = node.element_children.each_with_object(Hash.new) do |e, h|
-		puts h[e.name.to_sym] + " => " + e.content
+		## puts h[e.name.to_sym] + " => " + e.content
 	end
 
+	puts hash.inspect
 ## author_out << @page
 ## @xml_data = Nokogiri::XML.Reader(open("http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Collier%2C+Aaron&format=xerxes&max=100"))
 ## records = @page.xpath("//results//records[record[node()]]")

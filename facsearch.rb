@@ -37,17 +37,13 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 ## http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Lindholm,James&format=xerxes&max=100
 ###############
 
-@page = Nokogiri::XML.Reader(open(url))
-@page.class
+page = Nokogiri::XML.Reader(open(url))
+puts page.class
 
 ## author_out << @page
 ## @xml_data = Nokogiri::XML.Reader(open("http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Collier%2C+Aaron&format=xerxes&max=100"))
 ## records = @page.xpath("//results//records[record[node()]]")
 ## puts records
-
-@block = @page.xpath("//results/records/record")
-@block.class
-@block.count
 
 ### @page.each do |node|
 ###	headers = Array.new()

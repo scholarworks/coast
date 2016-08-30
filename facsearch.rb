@@ -92,6 +92,6 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	first_pass = FALSE
 	## puts " -------------------------------- "
 
-end
+## end
 
 end ## end of loop through CSV

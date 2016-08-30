@@ -44,6 +44,9 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 ## records = @page.xpath("//results//records[record[node()]]")
 ## puts records
 
+@block = @page.xpath("//results/records/record")
+@block.class
+@block.count
 
 ### @page.each do |node|
 ###	headers = Array.new()

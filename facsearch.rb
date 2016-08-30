@@ -37,8 +37,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 ## http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=Lindholm,James&format=xerxes&max=100
 ###############
 
-#@page = Nokogiri::XML.Reader(open(url))
-@page = Nokogiri::XML(open(url))
+@page = Nokogiri::XML.Reader(open(url))
 @page.class
 
 ## author_out << @page

@@ -54,10 +54,10 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 		au_first = "";
 		au_last = "";
 		node.each do |auth_node|
-			if auth_node.name = "aufirst"
+			if auth_node.name == "aufirst"
 				au_first = auth_node.inner_xml
 			end
-			if auth_node.name = "aulast">
+			if auth_node.name == "aulast">
 				au_last = auth_node.inner_xml
 			end
 		end

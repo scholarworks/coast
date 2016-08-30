@@ -43,11 +43,11 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	
 	node = dom.xpath('//results')
 	puts node.class
-	puts node
+	## puts node
 	
-	hash = node.element_children.each_with_object(Hash.new) do |e, h|
+	## hash = node.element_children.each_with_object(Hash.new) do |e, h|
 		## puts h[e.name.to_sym] + " => " + e.content
-	end
+	## end
 
 	puts hash.inspect
 ## author_out << @page

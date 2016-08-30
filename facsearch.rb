@@ -39,7 +39,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 
 	dom = Nokogiri::XML(open(url))
 	puts dom.class
-	puts dom
+	#puts dom
 	
 	node = dom.xpath('//results')
 	puts node.class

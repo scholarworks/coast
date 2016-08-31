@@ -49,7 +49,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 		puts element.class
 		element.children.each do |node|
 			puts node.class
-			puts node.attributes
+			puts node.children
 		end
 	end
 	

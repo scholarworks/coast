@@ -53,7 +53,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 				puts node.class
 				puts node.name
 			end
-		end if
+		end
 	end
 	
 	## hash = node.element_children.each_with_object(Hash.new) do |e, h|

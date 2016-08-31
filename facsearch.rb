@@ -41,7 +41,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	puts dom.class
 	#puts dom
 	
-	nodeset = dom.xpath('//results/records')
+	nodeset = dom.xpath('//results/records/record/xerxes_record')
 	puts nodeset.class
 	## puts node
 	

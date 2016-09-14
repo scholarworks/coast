@@ -46,8 +46,8 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	## puts node
 	
 	nodeset.children.each do |element|
-		puts element.class
-		puts element.name
+		## puts element.class
+		## puts element.name
 		if element.name == 'authors'
 			element.children.each do |node|
 				puts node.class

@@ -52,6 +52,10 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 			element.children.each do |node|
 				puts node.class
 				puts node.name
+				node.children.each do |subnode|
+					puts subnode.class
+					puts subnode.name
+				end
 			end
 		end   #test comment
 	end

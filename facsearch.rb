@@ -64,7 +64,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 					## end
 					## puts subnode['aufirst'].inner_text
 				end
-				puts node.search('aufirst')
+				puts node.search('aufirst').innert_text
 			end
 		end   #test comment
 	end

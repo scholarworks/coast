@@ -62,8 +62,9 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 					## end
 					## if subnode.name == 'aulast'
 					## end
-					puts subnode['aufirst'].inner_text
+					## puts subnode['aufirst'].inner_text
 				end
+				puts node['aufirst'].inner_text
 			end
 		end   #test comment
 	end

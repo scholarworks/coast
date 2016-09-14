@@ -48,13 +48,21 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 	nodeset.children.each do |element|
 		## puts element.class
 		## puts element.name
+		authors_list = ""
 		if element.name == 'authors'
 			element.children.each do |node|
 				puts node.class
 				puts node.name
+				author = ""
 				node.children.each do |subnode|
-					puts subnode.class
-					puts subnode.name
+					## puts subnode.class
+					## puts subnode.name
+					## if subnode.name == 'aufirst'
+					## 	
+					## end
+					## if subnode.name == 'aulast'
+					## end
+					puts node['aufirst'].inner_text
 				end
 			end
 		end   #test comment

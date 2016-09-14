@@ -50,10 +50,10 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 		## puts element.name
 		authors_list = ""
 		if element.name == 'authors'
+			author = ""
 			element.children.each do |node|
 				puts node.class
 				puts node.name
-				author = ""
 				node.children.each do |subnode|
 					## puts subnode.class
 					## puts subnode.name
@@ -64,8 +64,9 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 					## end
 					## puts subnode['aufirst'].inner_text
 				end
-				puts node.search('aufirst').inner_text
+				author = author + ", " + node.search('aulast').inner_text + ", " + node.search('aufirst').inner_text
 			end
+			puts author
 		end   #test comment
 	end
 	

@@ -68,7 +68,7 @@ url = "http://xerxes.calstate.edu/fullerton/articles/results?field=author&query=
 			end
 			puts author
 		end   #test comment
-		puts element.search('title').inner_text
+		puts element.elements.search('title').inner_text
 	end
 	
 	## hash = node.element_children.each_with_object(Hash.new) do |e, h|
